@@ -12,11 +12,6 @@ graph TD
     D --> F["i--"]
     E --> F
     F --> B
-    
-    style A fill:#90EE90,stroke:#333,stroke-width:2px
-    style K fill:#FFB6C6,stroke:#333,stroke-width:2px
-    style D fill:#FFE4B5,stroke:#FF6347,stroke-width:2px
-    style E fill:#FFE4B5,stroke:#FF6347,stroke-width:2px
 ```
 
 ---
