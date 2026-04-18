@@ -26,7 +26,7 @@ graph TD
 ### Initial State
 ```
 arr = [0, 1, 0, 3, 12]
-      0  1  2  3  4    (indices)
+       0  1  2  3  4    (indices)
 
 x = 0        (pointer to place non-zero elements)
 
@@ -41,9 +41,9 @@ PHASE 1: Collect all non-zero elements
 ```
 Current state:
 arr: [0, 1, 0, 3, 12]
-     0  1  2  3  4
-     ↑
-     i,x
+      0  1  2  3  4
+      ↑
+      i,x
 
 Values:
 - x = 0
@@ -56,11 +56,11 @@ Action: Skip (cannot place zero)
 Result: x stays 0, i moves to 1
 
 arr: [0, 1, 0, 3, 12]
-     0  1  2  3  4
-        ↑
-        i
-     ↑
-     x
+      0  1  2  3  4
+         ↑
+         i
+       ↑
+      x
 ```
 
 ---
@@ -250,33 +250,7 @@ arr: [1, 3, 12, 0, 0]
 ## 🏁 FINAL RESULT
 ```
 arr: [1, 3, 12, 0, 0]
-     ✓ All non-zero elements moved to front
-     ✓ Relative order maintained: 1, 3, 12
-     ✓ All zeros moved to end
 ```
-
----
-
-## Phase 1 Summary: Collecting Non-Zeros
-
-| Iteration | i | x | arr[i] | Condition | Action | Result |
-|-----------|---|---|--------|-----------|--------|--------|
-| 1 | 0 | 0 | 0 | 0 != 0? NO | Skip | arr stays same, x=0 |
-| 2 | 1 | 0 | 1 | 1 != 0? YES | arr[0]=1, x++ | arr[0]=1, x=1 |
-| 3 | 2 | 1 | 0 | 0 != 0? NO | Skip | arr stays same, x=1 |
-| 4 | 3 | 1 | 3 | 3 != 0? YES | arr[1]=3, x++ | arr[1]=3, x=2 |
-| 5 | 4 | 2 | 12 | 12 != 0? YES | arr[2]=12, x++ | arr[2]=12, x=3 |
-
----
-
-## Phase 2 Summary: Filling Zeros
-
-| Iteration | i | Action | Result |
-|-----------|---|--------|--------|
-| 1 | 3 | arr[3] = 0 | arr[3]=0 |
-| 2 | 4 | arr[4] = 0 | arr[4]=0 |
-
----
 
 ## Key Insights
 
